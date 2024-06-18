@@ -1,0 +1,9 @@
+[
+    {
+        "name":"Fendy Shirt",
+        "price": 120000,
+        "stock": 5,
+        "categoryId": 1,
+        "size": "XL"
+    }
+]

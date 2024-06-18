@@ -1,0 +1,16 @@
+[
+    {
+        "firstName":"Steven",
+        "lastName":"Leonardo",
+        "email":"steven@gmail.com",
+        "password":"test123",
+        "role":"Admin"
+    },
+    {
+        "firstName":"Bill",
+        "lastName":"Johnson",
+        "email":"Bill@gmail.com",
+        "password":"test123",
+        "role":"Customer"
+    }
+]
