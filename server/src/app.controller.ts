@@ -1,4 +1,4 @@
-import { Controller, Get,Post, Req, Res,Next} from '@nestjs/common';
+import { Controller, Get,Post,Put, Req, Res,Next} from '@nestjs/common';
 import { AppService } from './app.service';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -19,7 +19,7 @@ export class AppController {
   async loginUser(@Req() req: any, @Res() res: any, @Next() next: any): Promise<any> {
     return await this.appService.login(req,res,next);
   }
-  @Post('/forgetpass')
+  @Put('/forgetpass/:email')
   async update(@Req() req: any, @Res() res: any, @Next() next: any): Promise<any> {
     return await this.appService.update(req,res,next);
   }

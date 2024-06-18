@@ -68,13 +68,13 @@ async update(req, res, next) {
     const t = await sequelize.transaction();
     try {
         // const {id} = req.user //from authentication
-        const { id, email } = req.user;
-
+        const { email } = req.params;
+console.log(email)
         const { oldPassword, newPassword } = req.body;
         if (!oldPassword || !newPassword) throw { code: 1 };
 
         //check oldPass
-        const oldData = await User.findOne({ where: { id }, transaction: t });
+        const oldData = await User.findOne({ where: { email }, transaction: t });
         let dataCorrect = false,
             newData = null;
 
@@ -86,7 +86,7 @@ async update(req, res, next) {
         if (dataCorrect)
             newData = await User.update(
                 { password: newPassword },
-                { where: { id }, returning: true, individualHooks: true, transaction: t },
+                { where: { email }, returning: true, individualHooks: true, transaction: t },
             );
 
         //check newData
